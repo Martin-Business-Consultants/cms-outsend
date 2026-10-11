@@ -7,11 +7,11 @@
 <% end %>
 
 <%= form_with url: settings_outsend_path, id: "settings_form", method: :patch, scope: :settings do |form| %>
-  <%= tag.fieldset class: "space-y-6", disabled: !can_write do %>
-    <section class="<%= ui(:panel, "space-y-5 p-6") %>">
-      <div class="space-y-1">
-        <h2 class="<%= ui(:heading) %>">API key</h2>
-        <p class="text-sm text-gray-500">
+  <%= tag.fieldset class: "stack stack--lg", disabled: !can_write do %>
+    <section class="panel panel--padded fields">
+      <div class="stack stack--xs">
+        <h2 class="heading">API key</h2>
+        <p class="text-muted">
           <% if @key_saved %>
             The CMS sends its email through Outsend with the saved key.
           <% else %>
@@ -21,12 +21,12 @@
         </p>
       </div>
       <%= settings_field "Outsend API key" do %>
-        <%= form.password_field :api_key, class: "w-full font-mono", autocomplete: "new-password", placeholder: (@key_saved ? "Saved — leave blank to keep" : ""), data: { "1p-ignore": true } %>
+        <%= form.password_field :api_key, class: "text-mono", autocomplete: "new-password", placeholder: (@key_saved ? "Saved — leave blank to keep" : ""), data: { "1p-ignore": true } %>
       <% end %>
     </section>
   <% end %>
 <% end %>
 
 <% if @key_saved && can_write %>
-  <%= button_to "Remove the API key", settings_outsend_path, method: :delete, class: ui(:button, :danger, "mt-6"), form: { data: { turbo_confirm: "Stop sending email through Outsend?" } } %>
+  <%= button_to "Remove the API key", settings_outsend_path, method: :delete, class: "btn btn--danger", form: { data: { turbo_confirm: "Stop sending email through Outsend?" } } %>
 <% end %>

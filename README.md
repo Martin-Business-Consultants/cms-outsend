@@ -20,7 +20,7 @@ address", or the install's `MAIL_FROM_ADDRESS`) should be on that domain.
 
 ## Install
 
-Needs CMS 1.5 or newer.
+Needs CMS 1.30 or newer.
 
 In Settings › Plugins, under "Add a plugin", enter
 `Martin-Business-Consultants/cms-outsend` and press Install. Or from the shell:

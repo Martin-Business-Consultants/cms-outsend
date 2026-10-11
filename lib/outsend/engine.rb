@@ -28,7 +28,7 @@ module Outsend
 
     config.to_prepare do
       Cms::Plugins.register :outsend, name: "Outsend", version: Outsend::VERSION,
-        author: "Martin Business Consultants", enabled_by_default: false, requires: ">= 1.5",
+        author: "Martin Business Consultants", enabled_by_default: false, requires: ">= 1.30",
         homepage: "https://github.com/Martin-Business-Consultants/cms-outsend",
         description: "Send the CMS's email through Outsend: add your Outsend API key in Settings › Outsend."
       Cms::Plugins.settings :outsend, "Outsend", -> { settings_outsend_path },
